@@ -1,7 +1,9 @@
 package Main;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.masai.Usecases.InsertProduct;
 import com.masai.Usecases.Nregister;
 import com.masai.Usecases.connectCheck;
 
@@ -40,13 +42,26 @@ public class Main {
 			switch(scon){
 			case 1:
 				System.out.println("=====Welcome to Seller Registration Page=====");
-				Nregister n=new Nregister();
-				n.main(args);
+				try {
+					Nregister p=new Nregister();
+					p.main(args);
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println(e.getMessage());
+				}
 				
 				break;
 			
 			case 2:
-				
+				try {
+					InsertProduct p=new InsertProduct();
+					p.main(args);
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println(e.getMessage());
+				}
 				break;
 			
 			case 3:
